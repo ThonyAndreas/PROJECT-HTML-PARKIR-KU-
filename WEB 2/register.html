@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <title>ParkirKu</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="icon" href="images/google-map-symbol-png-1.png">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type="text/css" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-panels.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-desktop.css" />
+		</noscript>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header-wrapper">
+
+        <div id="header" class="container">
+
+            <div id="logo">
+                <h1><a href="#">PARKIR-KU</a></h1>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="twocolumn1.html">FORUM</a></li>
+                    <li><a href="twocolumn2.html">FEEDBACK</a></li>
+                    <li><a href="onecolumn.html">RATING</a></li>
+                    <li class="current_page_item"><a href="register.html">REGISTRASI</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+
+    <body>
+
+
+        <script type="text/javascript">
+            function validasi_input(form) {
+                pola_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                pola_tanggal = /^d{1,2}\/\d{1,2}\/\d{4}$/;
+
+                var nama = document.getElementById("nama").value;
+                var username = document.getElementById("username").value;
+                var dob = document.getElementById('dob').value;
+
+                var password = document.getElementById("password").value;
+                var repassword = document.getElementById("repassword").value;
+                var gender = document.getElementById("gender").value;
+                var email = document.getElementById("email").value;
+
+                /*var nama = document.getElementById('nama').value;
+                var username = document.getElementById('username').value;
+                var dob = document.getElementById('dob').value;
+                var gender = document.getElementById('gender').value;
+                var email = document.getElementById('email').value;*/
+
+                if (form.nama.value.length > 35 && form.nama.value.length != 0) {
+                    alert("Nama tidak boleh lebih dari 35 character");
+                    form.nama.focus();
+                    return (false);
+                } else if (form.nama.value == "") {
+                    alert("Nama tidak boleh kosong!");
+                    form.nama.focus();
+                    return (false);
+                }
+                if (form.username.value.length > 35 && form.username.value.length != 0) {
+                    alert("username tidak boleh lebih dari 35 character");
+                    form.nama.focus();
+                    return (false);
+                } else if (form.username.value == "") {
+                    alert("username tidak boleh kosong!");
+                    form.nama.focus();
+                    return (false);
+                } else if (!pola_email.test(form.email.value)) {
+                    alert("Masukan email dengan benar");
+                    form.email.focus();
+                    return (false);
+                }
+                window.confirm("Registrasi Sukses!\nNama:" + nama + "\nTanggal Lahir : " +
+                    dob + "\nEmail:" + email + "\nUsername:" + username)
+
+
+
+                return true;
+
+            }
+        </script>
+
+        <div class="login">
+            <form method="POST" action="login.html" onsubmit="return validasi_input(this)">
+                <title>Label</title>
+                <div>
+                    <label>Nama: <input type="text" name="nama" id="nama" placeholder="Tuliskan nama anda"required/></label>
+                </div>
+                <div>
+                    <label>Username: <input type="text" name="Username" id="Username" placeholder="Tuliskan username anda" required/></label>
+                </div>
+                <div>
+                    <label>Password: <input type="password" name="password" id="password" placeholder="Tuliskan password anda" required/></label>
+                </div>
+                <div>
+                    <label>Confirmation Password: <input type="password" name="repassword" id="repassword" placeholder="Tuliskan ulang password anda" required/></label>
+                </div>
+
+                <div>
+                    <label>Jenis Kelamin : </label> <br/>
+                    <hr style="color: black;">
+                    <input type="radio" name="gender" value="male" id="gender" required/> Laki-laki &nbsp;
+                    <input type="radio" name="gender" value="female" id="gender" required/> Perempuan <br>
+
+                </div>
+                <br>
+
+                <div>
+                    <label>Tanggal Lahir: <input type="date" name="dob" id="dob" placeholder="Tuliskan tanggal lahir anda" required/></label>
+                </div>
+                <br>
+                <div>
+                    <label>Email:</label>
+                    <input type="email" name="email" id="email" placeholder="contoh : contoh@gmail.com" required/>
+                </div>
+
+
+
+
+                <div>
+
+                    &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+                    <input type="submit" value="Register" class="tombol">
+                    <!--<button onclick="validasi_input(form)" input type="submit" class="tombol">REGISTER</button>-->
+                </div>
+            </form>
+        </div>
+    </body>
+
+</html>
